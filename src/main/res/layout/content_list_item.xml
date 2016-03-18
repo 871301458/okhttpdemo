@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:gravity="center"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
+    >
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            >
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:text="01"
+                android:gravity="center"
+                android:id="@+id/roomnum" />
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="不服来辩"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:text="1/2"
+                />
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            >
+            <ImageView
+                android:id="@+id/userImg2"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignRight="@+id/username"
+                android:layout_alignEnd="@+id/username"
+                android:layout_alignParentTop="true" />
+            <TextView
+                android:id="@+id/roomState"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="等待加入"
+                android:textSize="15dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/userImg2"
+                android:layout_toEndOf="@+id/userImg2"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp" />
+            <TextView
+                android:singleLine="true"
+                android:maxWidth="70dp"
+                android:layout_width="70dp"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/userImg2"
+                android:text="风一样子的美男子"
+                android:textSize="12dp"
+                android:id="@+id/username" />
+            <TextView
+                android:id="@+id/minscore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="底分:100"
+                android:layout_alignBottom="@+id/username"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>
