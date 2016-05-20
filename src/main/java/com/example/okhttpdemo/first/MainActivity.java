@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.okhttpdemo.Contants;
+import com.example.okhttpdemo.R;
+import com.example.okhttpdemo.first.OkHttpManager;
 
 import java.io.File;
 import java.io.FileOutputStream;

@@ -20,24 +20,23 @@ import okhttp3.Response;
 
 public abstract class BaseCallback<T> {
 
-    public Type mType;
 
     /**
      * 下面这几行是为了把T这个类型转换成Type这个类型所做的一些事情
      */
-    static Type getSuperclassTypeParameter(Class<?> subclass)
-    {
+    public Type mType;
+
+    static Type getSuperclassTypeParameter(Class<?> subclass) {
         Type superclass = subclass.getGenericSuperclass();
-        if (superclass instanceof Class)
-        {
+        if (superclass instanceof Class) {
             throw new RuntimeException("Missing type parameter.");
         }
         ParameterizedType parameterized = (ParameterizedType) superclass;
         return $Gson$Types.canonicalize(parameterized.getActualTypeArguments()[0]);
     }
 
-    public BaseCallback()
-    {
+
+    public BaseCallback() {
         mType = getSuperclassTypeParameter(getClass());
     }
 
@@ -45,7 +44,7 @@ public abstract class BaseCallback<T> {
 
     public abstract void onFailure(Request request, IOException e);
 
-    public abstract void onSuccess(Response response,T t);
+    public abstract void onSuccess(Response response, T t);
 
     public abstract void onError(Response response, int code, Exception e);
 

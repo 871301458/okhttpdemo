@@ -14,7 +14,7 @@ public class Contants {
     /**
      * 本机地址
      */
-    public static final String BASE_URL = "http://192.168.1.100:8080/";
+    public static final String BASE_URL = "http://192.168.1.108:8080/";
 
     /**
      * 同步请求
@@ -32,6 +32,9 @@ public class Contants {
      * POST提交
      */
     public static final String POST_URL = BASE_URL + "test2.json";
+
+
+    public static final  String JACK_URL = BASE_URL+"jack.json";
 
 
 }
