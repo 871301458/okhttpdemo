@@ -1,7 +1,6 @@
 package com.example.okhttpdemo.second;
 
 
-
 import android.os.Handler;
 import android.os.Looper;
 
@@ -83,18 +82,18 @@ public class OkHttpHelper {
 
                     String resultStr = response.body().string();
                     if (callback.mType == String.class) {
-                        callbackSuccess(callback,response,resultStr);
+                        callbackSuccess(callback, response, resultStr);
                     } else {
                         Object object = mGson.fromJson(resultStr, callback.mType);
                         try {
-                            callbackSuccess(callback,response,object);
+                            callbackSuccess(callback, response, object);
                         } catch (JsonParseException e) {
-                           callbackError(callback, response, e);
+                            callbackError(callback, response, e);
                         }
                     }
 
                 } else {
-                   callbackError(callback, response, null);
+                    callbackError(callback, response, null);
                 }
 
             }
@@ -153,21 +152,21 @@ public class OkHttpHelper {
     }
 
 
-    private void callbackSuccess(final BaseCallback callback, final Response response, final Object object){
+    private void callbackSuccess(final BaseCallback callback, final Response response, final Object object) {
         mHandler.post(new Runnable() {
             @Override
             public void run() {
-                    callback.onSuccess(response,object);
+                callback.onSuccess(response, object);
             }
         });
     }
 
-    private void callbackError(final  BaseCallback callback , final Response response, final Exception e ){
+    private void callbackError(final BaseCallback callback, final Response response, final Exception e) {
 
         mHandler.post(new Runnable() {
             @Override
             public void run() {
-                callback.onError(response,response.code(),e);
+                callback.onError(response, response.code(), e);
             }
         });
     }
