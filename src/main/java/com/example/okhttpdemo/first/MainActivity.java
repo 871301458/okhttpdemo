@@ -1,4 +1,4 @@
-package com.example.okhttpdemo;
+package com.example.okhttpdemo.first;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.okhttpdemo.Contants;
 
 import java.io.File;
 import java.io.FileOutputStream;
